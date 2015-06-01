@@ -22,7 +22,8 @@
 			}
 		});
 
-		$("input[name=add]").click(function () {
+		$("input[name=add]").on("click.add",function () {
+			$(this).off("click.add");
 			$("textarea").wysiwyg("addControl", "quote", {
 				groupIndex: 2,
 				icon: './../tests/images/quote02.gif',
