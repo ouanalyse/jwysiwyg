@@ -540,7 +540,7 @@
 html: '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" style="margin:0"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body style="margin:0;">INITIAL_CONTENT</body></html>',
 			debug: false,
 			controls: {},
-			css: {},
+			css: false,
 			events: {},
 			autoGrow: false,
 			autoSave: true,
@@ -1555,22 +1555,37 @@ html: '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.o
 
 			if (self.options.css) {
 				if (String === self.options.css.constructor) {
-					if ($.browser.msie) {
-						stylesheet = self.editorDoc.createStyleSheet(self.options.css);
-						$(stylesheet).attr({
-							"media":	"all"
-						});
-					} else {
-						stylesheet = $("<link/>").attr({
-							"href":		self.options.css,
-							"media":	"all",
-							"rel":		"stylesheet",
-							"type":		"text/css"
-						});
+					self.options.css = self.options.css.split(); // Make String to Array.
+				}
 
-						$(self.editorDoc).find("head").append(stylesheet);
+				if (Array === self.options.css.constructor) {
+					var mergedCss = {};
+					for (var cssData in self.options.css) {
+						if (Object === self.options.css[cssData].constructor) {
+							$.extend(mergedCss, self.options.css[cssData]);
+						} else if (String === self.options.css[cssData].constructor) {
+							if ($.browser.msie) {
+								stylesheet = self.editorDoc.createStyleSheet(self.options.css[cssData]);
+								$(stylesheet).attr({
+									"media": "all"
+								});
+							} else {
+								stylesheet = $("<link/>").attr({
+									"href": self.options.css[cssData],
+									"media": "all",
+									"rel": "stylesheet",
+									"type": "text/css"
+								});
+			
+								$(self.editorDoc).find("head").append(stylesheet);
+							}
+						}
 					}
-				} else {
+					self.timers.initFrame_Css = window.setTimeout(function (cssData) {
+						$(self.editorDoc.body).css(mergedCss);
+					}, 0);
+					delete mergedCss;
+				} else if (Object === self.options.css.constructor) {
 					self.timers.initFrame_Css = window.setTimeout(function () {
 						$(self.editorDoc.body).css(self.options.css);
 					}, 0);
