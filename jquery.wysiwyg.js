@@ -1,14 +1,14 @@
 /**
- * WYSIWYG – jQuery plugin 0.98.dev
+ * WYSIWYG – jQuery plugin 0.99.dev
  *
- * Copyright © 2008–2009 Juan M Martinez, 2010–2013 Akzhan Abdulin and all contributors
+ * Copyright © 2008–2009 Juan M Martinez, 2010–2014 Akzhan Abdulin and all contributors
  * https://github.com/jwysiwyg/jwysiwyg
  *
  * Dual licensed under the MIT and GPL licenses:
  *   http://www.opensource.org/licenses/mit-license.php
  *   http://www.gnu.org/licenses/gpl.html
  *
- * Release: 2013-12-13
+ * Release: 2014-10-24
  *
  */
 /*jslint browser: true, forin: true, white: true */
@@ -1930,6 +1930,18 @@ html: '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.o
 				}
 
 				oWysiwyg.setContent("");
+			});
+		},
+		
+		resize: function (object) {
+			return object.each(function() {
+				var oWysiwyg = $(this).data("wysiwyg");
+				
+				if (!oWysiwyg) {
+					return this;
+				}
+				
+				oWysiwyg.ui.grow();
 			});
 		},
 

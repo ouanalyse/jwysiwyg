@@ -1295,7 +1295,7 @@ html: '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.o
 				args = control["arguments"] || [];
 
 			if (control.exec) {
-				control.exec.apply(this, control.callbackArguments);  //custom exec function in control, allows DOM changing
+				control.exec.apply(this, control["callbackArguments"] || []);  //custom exec function in control, allows DOM changing
 			} else {
 				this.ui.focus();
 				this.ui.withoutCss(); //disable style="" attr inserting in mozzila's designMode
