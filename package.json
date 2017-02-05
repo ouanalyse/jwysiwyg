@@ -7,7 +7,7 @@
     "url": "https://github.com/jwysiwyg/jwysiwyg/issues",
     "email" : "akzhan.abdulin@gmail.com"
   },
-  "license": [ "MIT", "GPL" ],
+  "license": "(MIT OR GPL-1.0+)",
   "author": {
     "name" : "Akzhan Abdulin",
     "email" : "akzhan.abdulin@gmail.com",
