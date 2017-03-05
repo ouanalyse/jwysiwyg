@@ -5,8 +5,8 @@ jWYSIWYG 0.97 User Manual
 Copyright (c) 2009-2010 Juan M Martínez, 2011 Akzhan Abdulin and all contributors
 
 Dual licensed under the `MIT
-<http://github.com/akzhan/jwysiwyg/raw/master/MIT-LICENSE.txt>`_ and `GPL
-<http://github.com/akzhan/jwysiwyg/raw/master/GPL-LICENSE.txt>`_ licenses.
+<http://github.com/jwysiwyg/jwysiwyg/raw/master/MIT-LICENSE.txt>`_ and `GPL
+<http://github.com/jwysiwyg/jwysiwyg/raw/master/GPL-LICENSE.txt>`_ licenses.
 
 .. contents::
 
@@ -49,7 +49,7 @@ Some minor bugs still exist while 1.0 not reached.
 Web site
 ========
 
-`jWYSIWYG on GitHub <http://github.com/akzhan/jwysiwyg>`_
+`jWYSIWYG on GitHub <http://github.com/jwysiwyg/jwysiwyg>`_
 
 ===========
 Quick Start
@@ -595,7 +595,7 @@ Writing Custom Handlers
 It is possible to use custom ajax handlers that you write, with the File Manager.
 As mentioned before, the file manager enables you to set the ajax handler you want. The only thing that is required, is for the handler to follow the protocol documented here:
 
-https://github.com/akzhan/jwysiwyg/wiki/File-Manager-API
+https://github.com/jwysiwyg/jwysiwyg/wiki/File-Manager-API
 
 
 ====================================
@@ -622,14 +622,14 @@ Plugins
 =======
 
 Read document `help/docs/plugins.rst
-<https://github.com/akzhan/jwysiwyg/blob/master/help/docs/plugins.rst>`_
+<https://github.com/jwysiwyg/jwysiwyg/blob/master/help/docs/plugins.rst>`_
 
 ============
 Contributing
 ============
 
 Read document `help/docs/contributing.rst
-<https://github.com/akzhan/jwysiwyg/blob/master/help/docs/contributing.rst>`_
+<https://github.com/jwysiwyg/jwysiwyg/blob/master/help/docs/contributing.rst>`_
 
 =====================
 How to build jWYSIWYG
