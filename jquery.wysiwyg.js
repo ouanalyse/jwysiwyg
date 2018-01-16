@@ -15,7 +15,6 @@
 (function(window, document, undefined) {
 
 (function ($) {
-	"use strict";
 	/* Wysiwyg namespace: private properties and methods */
 
 	var console = window.console || {
